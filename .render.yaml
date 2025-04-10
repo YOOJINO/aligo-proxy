@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: aligo-sms
+    env: python
+    buildCommand: ""
+    startCommand: "python aligo_server.py"
