@@ -13,13 +13,10 @@ def send_sms():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
-
-
 @app.route('/ip', methods=['GET'])
 def get_ip():
-    import socket
-    import requests
     ip = requests.get('https://api.ipify.org').text
     return jsonify({"server_ip": ip})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=10000)
